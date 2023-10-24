@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <h1>Amplify Fest 2024 interactive map</h1>
+    <p>Click on the areas for information.</p>
+    <img src="AI-map.jpg" width="700px" alt="interactive festival map" usemap="#festivalmap" id="map">
+       <map name="festivalmap">
+          <div class="popup" style="top:48%;left:9%">New music 
+            <area shape="rect" coords="107,95,205,222" alt="new music">
+            <span class="popuptext" id="myPopup">Watch upcoming bands</span>
+          </div>
+          <div class="popup" style="top:48%;left:42.5%">Main stage
+            <area shape="rect" coords="509,73,638,248" alt="main stage">
+            <span class="popuptext" id="myPopup">Watch our headline acts here. Wheelchair accessible</span>
+          </div>
+          <div class="popup" style="top:132%;left:25%">Main entrance
+            <area shape="rect" coords="278,550,445,750" alt="main entrance">
+            <span class="popuptext" id="myPopup">The main entrance is off Festival Road. Coaches should use the rear entrance.</span>
+          </div>
+        </map>
+</body>
+
+<script>
+  // When the user clicks on div, open the popup
+
+  const myElements = document.querySelectorAll(".popup")
+myElements.forEach(el => {
+  el.addEventListener("click", () => {
+    el.querySelector("#myPopup").classList.toggle("show");
+  })
+})
+
+  </script>
+
+</html>
